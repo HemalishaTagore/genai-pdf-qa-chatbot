@@ -5,13 +5,24 @@ To design and implement a question-answering chatbot capable of processing and e
 
 ### PROBLEM STATEMENT:
 
+To develop a chatbot that can read and understand PDF documents and answer user questions based on the information available in the document. The system uses LangChain to extract text, split it into smaller chunks, generate embeddings, and retrieve relevant information to provide accurate answers.
+
 ### DESIGN STEPS:
 
-#### STEP 1:
+#### STEP 1: Load and Extract PDF Content
+- Load the PDF document using PyPDFLoader.
+- Extract text from all pages of the PDF.
+- Store the extracted content for further processing.
+#### STEP 2: Text Processing and Vector Database Creation
+- Split the extracted text into smaller chunks using RecursiveCharacterTextSplitter.
+- Generate embeddings using OpenAIEmbeddings.
+- Store the embeddings in a vector database using DocArrayInMemorySearch.
+#### STEP 3: Create Chatbot and Generate Answers
+- Create a question-answering chain using RetrievalQA.
+- Use ChatOpenAI to generate answers.
+- Accept questions from the user and retrieve relevant information from the PDF.
+- Display the generated answers until the user enters exit.
 
-#### STEP 2:
-
-#### STEP 3:
 
 ### PROGRAM:
 ```python
@@ -62,3 +73,5 @@ while True:
 <img width="1401" height="563" alt="image" src="https://github.com/user-attachments/assets/7d2d508a-6d41-4f96-8fcc-f509a49993f9" />
 
 ### RESULT:
+
+Thus, a PDF-based question-answering chatbot was successfully developed using LangChain. The chatbot loads PDF documents, extracts and processes their content, and answers user queries by retrieving relevant information from the document.
